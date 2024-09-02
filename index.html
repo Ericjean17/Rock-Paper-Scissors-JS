@@ -26,18 +26,16 @@
             // Human RPS input
             function getHumanChoice() {
                 while (true) {
-                    let humanInput = prompt("Rock, paper, or scissors?")
+                    let humanInput = prompt("rock, paper, or scissors?")
                     humanInput = humanInput.toLowerCase()
                     if (humanInput === "rock") {
-                        //console.log("rock")
                         return "rock"
+                        break;
                     }
                     else if (humanInput === "paper") {
-                        //console.log("paper")
                         return "paper"
                     }
                     else if (humanInput === "scissors") {
-                        //console.log("scissors")
                         return "scissors"
                     }
                     else {
@@ -51,33 +49,48 @@
                 let numRounds = 0
 
                 if (humanChoice === "rock" && computerChoice === "rock") {
-                    console.log("Tie!")
+                    window.alert("Computer played rock")
+                    window.alert("Tie!")
                 }
                 else if (humanChoice === "rock" && computerChoice === "scissors") {
-                    console.log("You win!")
+                    window.alert("Computer played scissors")
+                    window.alert("You win!")
+                    humanScore++
                 }
                 else if (humanChoice === "rock" && computerChoice === "paper") {
-                    console.log("Computer wins!")
+                    window.alert("Computer played paper")
+                    window.alert("Computer wins!")
+                    computerScore++;
                 }
 
                 else if (humanChoice === "paper" && computerChoice === "paper") {
-                    console.log("Tie!")
+                    window.alert("Computer played paper")
+                    window.alert("Tie!")
                 }
                 else if (humanChoice === "paper" && computerChoice === "rock") {
-                    console.log("You win!")
+                    window.alert("Computer played rock")
+                    window.alert("You win!")
+                    humanScore++
                 }
                 else if (humanChoice === "paper" && computerChoice === "scissors") {
-                    console.log("Computer wins!")
+                    window.alert("Computer played scissors")
+                    window.alert("Computer wins!")
+                    computerScore++;
                 }
 
                 else if (humanChoice === "scissors" && computerChoice === "scissors") {
-                    console.log("Tie!")
+                    window.alert("Computer played scissors")
+                    window.alert("Tie!")
                 }
                 else if (humanChoice === "scissors" && computerChoice === "paper") {
-                    console.log("You win!")
+                    window.alert("Computer played paper")
+                    window.alert("You win!")
+                    humanScore++
                 }
                 else if (humanChoice === "scissors" && computerChoice === "rock") {
-                    console.log("Computer wins!")
+                    window.alert("Computer played rock")
+                    window.alert("Computer wins!")
+                    computerScore++
                 }
             }
             function playGame() {
@@ -88,6 +101,7 @@
                     playRound(humanSelection, computerSelection)
                     numRounds++
                 }
+                window.alert(`Your score: ${humanScore}` + `        Computer score: ${computerScore}`)
             }
             playGame()
         </script>
