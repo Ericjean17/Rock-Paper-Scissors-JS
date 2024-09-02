@@ -73,23 +73,23 @@
                 else if (humanChoice === "scissors" && computerChoice === "scissors") {
                     console.log("Tie!")
                 }
-                else if (humanChoice === "rock" && computerChoice === "scissors") {
+                else if (humanChoice === "scissors" && computerChoice === "paper") {
                     console.log("You win!")
                 }
-                else if (humanChoice === "rock" && computerChoice === "paper") {
+                else if (humanChoice === "scissors" && computerChoice === "rock") {
                     console.log("Computer wins!")
                 }
-
-                const humanSelection = getHumanChoice()
-                const computerSelection = getComputerChoice()
-
-
             }
-
-            const humanSelection = getHumanChoice()
-            const computerSelection = getComputerChoice()
-
-            playRound(humanSelection, computerSelection)
+            function playGame() {
+                let numRounds = 0;
+                while (numRounds < 5) {
+                    const humanSelection = getHumanChoice()
+                    const computerSelection = getComputerChoice()
+                    playRound(humanSelection, computerSelection)
+                    numRounds++
+                }
+            }
+            playGame()
         </script>
     </body>
 </html>
